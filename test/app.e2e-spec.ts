@@ -1,24 +1,29 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+import * as pactum from 'pactum';
+import { AppModule } from '@/module/app/app.module';
 
 describe('AppController (e2e)', () => {
-  let app: INestApplication;
+    let app: INestApplication;
 
-  beforeEach(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [AppModule],
-    }).compile();
+    beforeAll(async () => {
+        const moduleFixture: TestingModule = await Test.createTestingModule({
+            imports: [AppModule],
+        }).compile();
 
-    app = moduleFixture.createNestApplication();
-    await app.init();
-  });
+        app = moduleFixture.createNestApplication();
+        await app.init();
+        await app.listen(3333); // TODO: Make port dynamic
+        pactum.request.setBaseUrl('http://localhost:3333'); // TODO: make url dynamic
+    });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
-  });
+    afterAll(() => {
+        app.close();
+    });
+
+    describe('Root', () => {
+        it('Should return ok on /', () => {
+            return pactum.spec().get('/').expectStatus(200);
+        });
+    });
 });
