@@ -2,6 +2,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as pactum from 'pactum';
 import { AppModule } from '@/module/app/app.module';
+import { serverConfig } from '@/config';
+
+const { SERVER_IP, SERVER_PORT, SERVER_PROTOCOL } = serverConfig();
 
 describe('AppController (e2e)', () => {
     let app: INestApplication;
@@ -13,8 +16,10 @@ describe('AppController (e2e)', () => {
 
         app = moduleFixture.createNestApplication();
         await app.init();
-        await app.listen(3333); // TODO: Make port dynamic
-        pactum.request.setBaseUrl('http://localhost:3333'); // TODO: make url dynamic
+        await app.listen(SERVER_PORT);
+        pactum.request.setBaseUrl(
+            `${SERVER_PROTOCOL}://${SERVER_IP}:${SERVER_PORT}'`,
+        );
     });
 
     afterAll(() => {

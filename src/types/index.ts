@@ -1,6 +1,1 @@
-export enum NodeEnvironment {
-    LOCAL = 'local',
-    DEV = 'development',
-    PRODUCTION = 'production',
-    TEST = 'test',
-}
+export * from './env.types';
