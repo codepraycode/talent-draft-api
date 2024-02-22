@@ -9,6 +9,11 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "build": "nest build",
+
+    "env:create": "./scripts/dev/create-env.sh",
+    "env:set-example": "./scripts/dev/update-env-example.sh",
+    "env:send": "./scripts/dev/transfer-env.sh",
+
     "prestart": "cp ./env/.env.development ./.env",
     "start": "NODE_ENV=development nest start",
     "prestart:dev": "cp ./env/.env.development ./.env",
