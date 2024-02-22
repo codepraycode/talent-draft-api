@@ -41,7 +41,11 @@ lerna-debug.log*
 .env.test.local
 .env.production.local
 .env.local
+.env.test
 
+env/*
+!env/.env.example
+!env/README.md
 # temp directory
 .temp
 .tmp
