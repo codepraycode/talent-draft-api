@@ -10,7 +10,7 @@ Still on it...
 
 View endpoints documentation in Postman:
 
-[<img src="https://run.pstmn.io/button.svg" alt="View endpoints documentation in Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/16739918-b4030e4d-02dd-4f8c-bc50-0de5cc1b21fa?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D16739918-b4030e4d-02dd-4f8c-bc50-0de5cc1b21fa%26entityType%3Dcollection%26workspaceId%3D0d42a23f-2175-4e1e-95f3-0ceef346f71c#?env%5BTalent-draft-env%5D=W3sia2V5IjoiYXBpLXVybCIsInZhbHVlIjoiaHR0cDovL2xvY2FsaG9zdDozMzMzIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6ImRlZmF1bHQiLCJzZXNzaW9uVmFsdWUiOiJodHRwOi8vMy45MC42OS4xNjcvIiwic2Vzc2lvbkluZGV4IjowfV0=)
+[<img src="https://run.pstmn.io/button.svg" alt="View endpoints documentation in Postman" style="width: 128px; height: 32px;">](https://www.postman.com/cloudy-crescent-375263/workspace/codepraycode-public/collection/16739918-b4030e4d-02dd-4f8c-bc50-0de5cc1b21fa)
 
 
 ## Installation
