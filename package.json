@@ -24,7 +24,7 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "NODE_ENV=production node dist/main",
     "start:prod:pm2": "pm2 start dist/main.js --name $APP_NAME --env production",
-    
+
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
