@@ -1,6 +1,7 @@
 #!/bin/bash
-
-source "$(dirname "$0")/functions.sh"
+# Script to create environment variable from example template
+# To be ran using npm
+source "$(dirname "$(dirname "$0")")/common/functions.sh"
 
 base_dir=$(getProjectDir)
 env_path="$base_dir/env"

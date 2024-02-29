@@ -14,6 +14,8 @@
     "env:set-example": "./scripts/dev/update-env-example.sh",
     "env:send": "./scripts/dev/transfer-env.sh",
 
+    "setup:send-script": "./scripts/server/send-script-to-server.sh",
+
     "prestart": "cp ./env/.env.development ./.env",
     "start": "NODE_ENV=development nest start",
     "prestart:dev": "cp ./env/.env.development ./.env",
@@ -21,6 +23,7 @@
     "start:debug": "nest start --debug --watch",
     "prestart:prod": "cp ./env/.env.production ./.env",
     "start:prod": "NODE_ENV=production node dist/main",
+    "start:prod:pm2": "NODE_ENV=production pm2 start dist/main.js --name $APP_NAME",
     
     "test": "jest",
     "test:watch": "jest --watch",
