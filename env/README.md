@@ -42,6 +42,8 @@ To update or create `.env.example` file from your `.env.development` file
 npm run env:set-example
 ```
 
+> Note: This is done automatically when a commit is made, to skip it add `--no-verify ` during commit.
+
 To send production configurations (i.e `.env.production`), use:
 
 ```bash
