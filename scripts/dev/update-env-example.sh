@@ -1,6 +1,9 @@
 #!/bin/bash
 
-source "$(dirname "$0")/functions.sh"
+# Script to create and .env.example file
+#   Reads all variable names in any of the other .env files, and create an example file
+#   it auto commit the .env.example file
+source "$(dirname "$(dirname "$0")")/common/functions.sh"
 
 base_dir=$(getProjectDir)
 
