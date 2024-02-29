@@ -16,7 +16,7 @@ sudo apt-get upgrade
 
 # Check and install Nginx
 if command -v nginx &> /dev/null; then
-	echo "Nginx is already installed, checked ✅"
+	echo "✅ Nginx is already installed, checked"
 else
 	echo "Nginx not installed, make sure to configure server. Exiting"
 	exit 1
@@ -24,31 +24,31 @@ fi
 
 # Check and install curl
 if command -v curl &> /dev/null; then
-	echo "curl is already installed ✅."
+	echo "✅ Curl is already installed."
 else
 	echo "Installing curl..."
 	if sudo apt-get install -y curl; then
-		echo "curl installed successfully ✅"
+		echo "✅ Curl installed successfully."
 	else
-		echo "Failed to install curl ❌."
+		echo "❌ Failed to install curl."
 		exit 1
 	fi
 fi
 
 # Check and install nodejs version 18
 if command -v node &> /dev/null; then
-	echo "Nodejs is already installed. ✅."
+	echo "✅ Nodejs is already installed."
 else
 	if command -v curl &> /dev/null; then
 		echo "Installing Nodejs version 18..."
 		if curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-get install -y nodejs; then
-			echo "Node.js version 18 installed successfully ✅."
+			echo "✅ Node.js version 18 installed successfully."
 		else
-			echo "Failed to install Node.js version 18 ❌."
+			echo "❌ Failed to install Node.js version 18."
 			exit 1
 		fi
 	else
-		echo "Node.js installation requires curl ❌. Exiting."
+		echo "❌ Node.js installation requires curl. Exiting."
 		exit 1
 	fi
 fi
@@ -56,4 +56,4 @@ fi
 # Install pm2
 sudo npm install -g pm2
 
-echo -e "\n\n\t Server setup successful ✅."
+echo -e "\n\n\t✅ Server setup successful."

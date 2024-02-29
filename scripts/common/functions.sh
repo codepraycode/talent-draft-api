@@ -22,11 +22,11 @@ function toLowerCase {
 
 function sendToServer {
     if [ -z "$1" ]; then
-        echo "Path to file to transfer is required ❌. Exiting."
+        echo "❌ Path to file to transfer is required. Exiting."
         exit 1
     else
         if [ -z "$2" ]; then
-            echo "Path to save file in destination is required ❌. Exiting"
+            echo "❌ Path to save file in destination is required. Exiting"
             exit 1
         fi
     fi
@@ -38,9 +38,9 @@ function sendToServer {
     scp -i $rsa_key $1 $user@$host:$2
 
     if [ $? -eq 0 ]; then
-        echo "File transfer successful ✅."
+        echo "✅ File transfer successful."
     else
-        echo "File transfer failed ❌."
+        echo "❌ File transfer failed."
     fi
 
 }

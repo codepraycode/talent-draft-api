@@ -4,7 +4,7 @@
 
 # Check if GITHUB_TOKEN is set (in environment)
 if [ -z "$GITHUB_TOKEN" ]; then
-	echo "Error: GITHUB_TOKEN is not set in environment, please set it and try again ❌."
+	echo "❌ Error: GITHUB_TOKEN is not set in environment, please set it and try again."
 	exit 1
 fi
 
@@ -12,7 +12,7 @@ fi
 read -p "Enter your Github email address: " github_email
 
 if [ -z "$github_email" ]; then
-	echo "Error: Github email cannot be empty ❌. Exiting."
+	echo "❌ Error: Github email cannot be empty. Exiting."
 	exit 1
 fi
 
@@ -33,10 +33,10 @@ fi
 # Generate SSH key if it doesn't exist
 if [ -z "$existing_key" ]; then
 	ssh-keygen -t rsa -b 4096 -C "$github_email"
-	echo "SSH key generated ✅."
+	echo "✅ SSH key generated."
 	cat ~/.ssh/id_rsa.pub
 else
-	echo "SSH key for $github_email already exists ✅. Skipping key generation."
+	echo "✅ SSH key for $github_email already exists. Skipping key generation."
 fi
 
 # Add SSH key to Github if no existing key
@@ -51,10 +51,10 @@ if [ -z "$existing_key" ]; then
 			-H "X-GitHub-Api-Version: 2022-11-28" \
 			https://api.github.com/user/keys \
 			-d "{\"title\":\"$key_identifier\",\"key\":\"$(cat ~/.ssh/id_rsa.pub)\"}"
-		echo "SSH key added to Github successfully ✅."
+		echo "✅SSH key added to Github successfully."
 	else
 		echo "SSH key not added to Github. You can do it manually later."
 	fi
 fi
 
-echo -e "\n\Git setup successful ✅."
+echo -e "\n\t✅Git setup successful."

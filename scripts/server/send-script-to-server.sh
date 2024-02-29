@@ -7,7 +7,7 @@ source "$(dirname "$(dirname "$0")")/common/functions.sh"
 base_dir=$(getProjectDir)
 
 if [ -z "$1" ]; then
-    echo "Script path is required ❌. Exiting."
+    echo "❌ Script path is required. Exiting."
     exit 1
 fi
 

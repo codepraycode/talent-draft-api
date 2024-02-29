@@ -43,12 +43,12 @@ runCloneMain(){
 	git clone -b "$branch" "$repo_link" "$repo_dir"
 	
 	if [ $? -eq 0 ]; then
-		echo "Git repository cloned successfully ✅."
+		echo "✅Git repository cloned successfully."
 		cd "$repo_dir"
 		git log -1 --pretty=format:"%s|%ad"
 		cd ..
 	else
-		echo "Failed to clone git repository ❌."
+		echo "❌ Failed to clone git repository."
 		exit 1
 	fi
 }
@@ -71,4 +71,4 @@ cd "$repo_dir"
 echo -e "\nInstalling dependencies...\n\n"
 npm install
 
-echo -e "\n\tDeployment successful ✅."
+echo -e "\n\t✅Deployment successful."
